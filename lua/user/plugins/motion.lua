@@ -89,10 +89,11 @@ return {
       { "F", mode = { "n", "x", "o" } },
       { "t", mode = { "n", "x", "o" } },
       { "T", mode = { "n", "x", "o" } },
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },   
       { "r", "<Cmd>lua require('flash').remote({restore=true})<CR>", mode = "o", desc = "Flash Remote" },
       { "S", "<Cmd>lua require('flash').treesitter()<CR>", mode = { "n", "o", "x" }, desc = "Flash Treesitter" },
-      { ";", "<Cmd>lua require('flash').treesitter({jump={pos='start'}})<CR>", mode = { "n", "o", "x" }, desc = "Outter Start Of Treesitter Node" },
-      { ",", "<Cmd>lua require('flash').treesitter({jump={pos='end'}})<CR>", mode = { "n", "o", "x" }, desc = "Outter Start Of Treesitter Node" },
+      { "<Leader>;", "<Cmd>lua require('flash').treesitter({jump={pos='start'}})<CR>", mode = { "n", "o", "x" }, desc = "Outter Start Of Treesitter Node" },
+      { "<Leader>,", "<Cmd>lua require('flash').treesitter({jump={pos='end'}})<CR>", mode = { "n", "o", "x" }, desc = "Outter Start Of Treesitter Node" },
     },
     opts = {
       labels = "asdfghjklqwertyuiopzxcvbnm1234567890",
@@ -102,6 +103,7 @@ return {
       },
       modes = {
         char = {
+          enabled = false,
           highlight = { backdrop = false },
           -- Exclude some motion and operator
           label = { exclude = "ryipasdhjklxcvYPSDJKXCV" },

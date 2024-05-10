@@ -9,7 +9,7 @@ vim.g.clipboard = vim.g.vscode_clipboard
 vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
-vim.opt.timeoutlen = 500
+vim.opt.timeoutlen = 1000
 vim.opt.shortmess = "oOtTWIcCFS"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -90,23 +90,27 @@ vim.keymap.set("n", "gi", vscode_action("editor.action.goToImplementation"), { d
 vim.keymap.set("n", "zl", vscode_action("scrollRight"), { desc = "Scroll Right" })
 vim.keymap.set("n", "zh", vscode_action("scrollLeft"), { desc = "Scroll Left" })
 -- Motion: basic move
-vim.keymap.set({ "n", "x" }, "j", function()
-  if vim.v.count == 0 then
-    vim.cmd("normal gj") -- vscode's gj
-  else
-    vim.cmd(string.format("normal! %dj", vim.v.count))
-  end
-end, { desc = "Down" })
-vim.keymap.set({ "n", "x" }, "k", function()
-  if vim.v.count == 0 then
-    vim.cmd("normal gk") -- vscode's gk
-  else
-    vim.cmd(string.format("normal! %dk", vim.v.count))
-  end
-end, { desc = "Down" })
+local function moveCursor(direction)
+    if (vim.fn.reg_recording() == '' and vim.fn.reg_executing() == '') then
+        return ('g' .. direction)
+    else
+        return direction
+    end
+end
+
+vim.keymap.set('n', 'k', function() return moveCursor('k') end, { expr = true, remap = true })
+vim.keymap.set('n', 'j', function() return moveCursor('j') end, { expr = true, remap = true })
 vim.keymap.set("c", "<C-A>", "<C-B>", { desc = "Start Of Line" })
 vim.keymap.set("i", "<C-A>", "<Home>", { desc = "Start Of Line" })
 vim.keymap.set("i", "<C-E>", "<End>", { desc = "End Of Line" })
+-- Folding
+vim.keymap.set("n", "zM", vscode_action('editor.foldAll'), { desc = "fold all" })
+vim.keymap.set("n", "zR", vscode_action('editor.unfoldAll'), { desc = "unfold all" })
+vim.keymap.set("n", "zc", vscode_action('editor.fold'), { desc = "fold" })
+vim.keymap.set("n", "zC", vscode_action('editor.foldRecursively'), { desc = "fold recursively" })
+vim.keymap.set("n", "zo", vscode_action('editor.unfold'), { desc = "unfold" })
+vim.keymap.set("n", "zO", vscode_action('editor.unfoldRecursively'), { desc = "unfold recursively" })
+vim.keymap.set("n", "za", vscode_action('editor.toggleFold'), { desc = "toggle fold" })
 -- Motion: bookmark
 vim.keymap.set({ "n" }, "m;", vscode_action("bookmarks.toggle"), { desc = "Toogle Bookmark" })
 vim.keymap.set({ "n" }, "m:", vscode_action("bookmarks.toggleLabeled"), { desc = "Toogle Bookmark Label" })
