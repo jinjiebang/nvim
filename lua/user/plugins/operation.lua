@@ -57,7 +57,7 @@ return {
     },
     opts = {
       highlight = { timer = 150 },
-      ring = { storage = utils.is_windows() and "shada" or "sqlite" },
+      ring = { storage = "shada" },
     },
   },
 
