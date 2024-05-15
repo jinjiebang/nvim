@@ -111,6 +111,9 @@ vim.keymap.set("n", "zC", vscode_action('editor.foldRecursively'), { desc = "fol
 vim.keymap.set("n", "zo", vscode_action('editor.unfold'), { desc = "unfold" })
 vim.keymap.set("n", "zO", vscode_action('editor.unfoldRecursively'), { desc = "unfold recursively" })
 vim.keymap.set("n", "za", vscode_action('editor.toggleFold'), { desc = "toggle fold" })
+-- Format
+vim.keymap.set("v", "<Leader>fs", vscode_action("editor.action.formatSelection"), { desc = "format Selection" })
+vim.keymap.set("v", "<Leader>fS", vscode_action("editor.action.formatSelection.multiple"), { desc = "format Selection multiple" })
 -- Motion: bookmark
 vim.keymap.set({ "n" }, "m;", vscode_action("bookmarks.toggle"), { desc = "Toogle Bookmark" })
 vim.keymap.set({ "n" }, "m:", vscode_action("bookmarks.toggleLabeled"), { desc = "Toogle Bookmark Label" })

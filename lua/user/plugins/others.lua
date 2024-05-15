@@ -1,3 +1,5 @@
+local utils = require("user.utils")
+
 return {
   -- Basic lib
   { "nvim-lua/plenary.nvim", lazy = true },
@@ -77,5 +79,13 @@ return {
       { "<Leader>sT", "<Cmd>TodoTelescope keywords=TODO,FIX,PERF<CR>", desc = "TODO/FIX/PERF" },
     },
     opts = {},
+  },
+  {
+    "keaising/im-select.nvim",
+    config = function()
+        require("im_select").setup({
+          default_im_select  = utils.is_windows() and "1033" or "com.apple.keylayout.ABC",
+        })
+    end,
   },
 }
