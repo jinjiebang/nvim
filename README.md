@@ -47,12 +47,12 @@ Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
 # optional but recommended
 Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
 # clone
-git clone https://github.com/mrbeardad/nvim $env:LOCALAPPDATA\nvim
+git clone https://github.com/jinjiebang/nvim $env:LOCALAPPDATA\nvim
 # start and install plugins automatically
 nvim
 ```
 
-### Linux
+### Linux Mac
 
 ```sh
 # required
@@ -62,7 +62,7 @@ mv ~/.local/share/nvim{,.bak}
 mv ~/.local/state/nvim{,.bak}
 mv ~/.cache/nvim{,.bak}
 # clone
-git clone https://github.com/LazyVim/starter ~/.config/nvim
+git clone https://github.com/jinjiebang/nvim ~/.config/nvim
 # start and install plugins automatically
 nvim
 ```
@@ -105,7 +105,7 @@ Make sure you have added following settings to your settings.json,
   ],
   "vscode-neovim.ctrlKeysForNormalMode": [
     "a",
-    "b",
+    // "b",
     // "c",
     "d",
     "e",
