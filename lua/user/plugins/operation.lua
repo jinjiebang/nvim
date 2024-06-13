@@ -7,7 +7,7 @@ return {
     "echasnovski/mini.surround",
     keys = {
       { "ys", desc = "Add Surround" },
-      { "s", ":<C-U>lua MiniSurround.add('visual')<CR>", mode = "x", desc = "Add Surround" },
+      { "x", ":<C-U>lua MiniSurround.add('visual')<CR>", mode = "x", desc = "Add Surround" },
       { "cs", desc = "Change Surround" },
       { "ds", desc = "Delete Surround" },
     },
@@ -28,7 +28,6 @@ return {
     },
     config = function(_, opts)
       require("mini.surround").setup(opts)
-      vim.keymap.del("x", "ys")
     end,
   },
 
