@@ -1,0 +1,14 @@
+{
+  "LazyVim": { "branch": "main", "commit": "c848cfddef6f4417b133382cae6fda49e8df990c" },
+  "flash.nvim": { "branch": "main", "commit": "43f67935d388fbb540f8b40e8cbfd80de54f978a" },
+  "im-select.nvim": { "branch": "master", "commit": "c2b414bd1bcfcea1af8319ae7cc988ef16548417" },
+  "lazy.nvim": { "branch": "main", "commit": "cea5920abb202753004440f94ec39bcf2927e02e" },
+  "mini.ai": { "branch": "main", "commit": "45587078f323eaf41b9f701bbc04f8d1ab008979" },
+  "mini.comment": { "branch": "main", "commit": "080f00bb91fea4bab799820bd2ce835a88d0703a" },
+  "mini.pairs": { "branch": "main", "commit": "927d19cbdd0e752ab1c7eed87072e71d2cd6ff51" },
+  "mini.surround": { "branch": "main", "commit": "7098744c8d4573a4b32cb172965f6b2ba03465d2" },
+  "nvim-treesitter": { "branch": "master", "commit": "acc1708b962e12cc1d671cd530782727801804c3" },
+  "nvim-treesitter-textobjects": { "branch": "master", "commit": "34867c69838078df7d6919b130c0541c0b400c47" },
+  "nvim-ts-context-commentstring": { "branch": "main", "commit": "2b7dcf6aab0947b9c4195f1d8aa592cdcd944ffe" },
+  "vscode-multi-cursor.nvim": { "branch": "main", "commit": "a0af78cf5e5a6f2d55e37e7907a3d1b096bbaa4d" }
+}
