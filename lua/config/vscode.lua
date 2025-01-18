@@ -66,3 +66,7 @@ vim.keymap.set({ "n" }, "m:", vscode_action("bookmarks.toggleLabeled"), { desc =
 vim.keymap.set({ "n" }, "m/", vscode_action("bookmarks.listFromAllFiles"), { desc = "List All Bookmarks" })
 -- Format Code
 vim.keymap.set({ "n", "v" }, "<Leader>cf", vscode_action("editor.action.formatDocument"), { desc = "format" })
+-- restartExtensionHost
+vim.keymap.set({ "n", "v" }, "<Leader>re", vscode_action("workbench.action.restartExtensionHost"), { desc = "restart extension host" })
+-- conventionalCommits
+vim.keymap.set({ "n", "v" }, "<Leader>cc", vscode_action("extension.conventionalCommits"), { desc = "conventionalCommits" })
