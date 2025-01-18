@@ -64,3 +64,5 @@ vim.keymap.set("n", "za", vscode_action('editor.toggleFold'), { desc = "toggle f
 vim.keymap.set({ "n" }, "m;", vscode_action("bookmarks.toggle"), { desc = "Toogle Bookmark" })
 vim.keymap.set({ "n" }, "m:", vscode_action("bookmarks.toggleLabeled"), { desc = "Toogle Bookmark Label" })
 vim.keymap.set({ "n" }, "m/", vscode_action("bookmarks.listFromAllFiles"), { desc = "List All Bookmarks" })
+-- Format Code
+vim.keymap.set({ "n", "v" }, "<Leader>cf", vscode_action("editor.action.formatDocument"), { desc = "format" })
